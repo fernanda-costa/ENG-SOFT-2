@@ -8,7 +8,7 @@ ${LOGO_SIGA}    //a[@class="navbar-brand"]
 ${USERNAME}    08364103946
 ${PASSWORD}    SenhaTemp1
 ${LOGIN_BTN}    //button[@type="submit"]  
-${MENSAGEM_ERRO}    //span[contains(text(),'Usuário ou senha inválidos!')]
+${MENSAGEM_ERRO}    //div[contains(text(),'Usuário e/ou senha inválidos!')]
 
 *** Keywords ***
 Abrir o Navegador
@@ -33,6 +33,8 @@ Clicar no Botão Acessar
 
 Checar Mensagem de Erro
     Wait Until Element Is Visible    locator=${MENSAGEM_ERRO}                                  
+
+Exibir/Esconder Dashboard
 
 Verificar se aparece na página "${TEXTO}"
     Wait Until Element Is Visible    locator=//p[contains(.,'${TEXTO} (atendimento por email e Teams durante a suspensão do calendário acadêmico):')]                                   
