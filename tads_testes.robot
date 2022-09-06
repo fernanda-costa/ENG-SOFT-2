@@ -24,17 +24,19 @@ CASE DE TESTE : Relizar login inválido
 
 CASE DE TESTE : Listar perfis de acesso
     [Documentation]    Verifica se os perfis de acesso são exibidos
-    [Tags]    perfil de acesso
+    [Tags]    perfil_acesso
     Acessar site do SIGA "${URL}"
-    Realiza login
-    Verificar se aparece na página perfil de acesso
+    Realizar login
+    Verificar se aparece na página perfil de acesso "CELIN"
+    Verificar se aparece na página perfil de acesso "Graduação"
+    Verificar se aparece na página perfil de acesso "SISPRO: Parcerias e Extensão"
 
-CASE DE TESTE : Realiza logout
+CASE DE TESTE : Realizar logout
     [Documentation]    Realiza logout
     [Tags]    logout
     Acessar site do SIGA "${URL}"
-    Realiza login
-    Realiza logout
+    Realizar login
+    Realizar logout
 
 CASE DE TESTE: Exibir/Esconder Dashboard
     [Documentation]    Clica no ícone do menu para exibir o sidebar
