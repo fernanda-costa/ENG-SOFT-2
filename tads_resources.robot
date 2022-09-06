@@ -8,7 +8,9 @@ ${LOGO_SIGA}    //a[@class="navbar-brand"]
 ${USERNAME}    08364103946
 ${PASSWORD}    SenhaTemp1
 ${LOGIN_BTN}    //button[@type="submit"]  
-${MENSAGEM_ERRO}    //div[@class="alert alert-danger"]  
+${GRADUACAO_BTN}    //button[@class="btn btn-box-tool no-fa-icon"]  
+${LOGOUT_BTN}    //a[text()='Sair']  
+${PORTAL_URL}    https://siga.ufpr.br/portal/  
 
 *** Keywords ***
 Abrir o Navegador
@@ -27,5 +29,9 @@ Realiza login
     Input Password    name=password    ${PASSWORD}  
     Click Element    locator=${LOGIN_BTN}
 
-Verificar se aparece na página perfil de acesso "${TEXTO}"
+Verificar se aparece na página perfil de acesso
+    Element Should Be Visible  locator=${GRADUACAO_BTN}
 
+Realiza logout
+    Click Element    locator=${LOGOUT_BTN}
+    Location Should Be  url=${PORTAL_URL}

@@ -7,21 +7,19 @@ Test Setup       Abrir o Navegador
 
 *** Variables ***
 ${URL}    https://www.prppg.ufpr.br/siga/
-${GRADUACAO_BTN}    Graduação
 
 *** Test Cases ***
-
-# CASE DE TESTE : 
-#     [Documentation] Listar perfis de acesso
-#     [Tags]    Perfil de acesso
-#     Realiza login
-#     Lista os perfis de acesso do usuario logado "${URL}"
-#     Verifica se os perfis de acesso sao exibidos
-
 
 CASE DE TESTE : Listar perfis de acesso
     [Documentation]    Verifica se os perfis de acesso são exibidos
     [Tags]    perfil de acesso
     Acessar site do SIGA "${URL}"
     Realiza login
-    Verificar se aparece na página perfil de acesso "${GRADUACAO_BTN}"
+    Verificar se aparece na página perfil de acesso
+
+CASE DE TESTE : Realiza logout
+    [Documentation]    Realiza logout
+    [Tags]    logout
+    Acessar site do SIGA "${URL}"
+    Realiza login
+    Realiza logout
