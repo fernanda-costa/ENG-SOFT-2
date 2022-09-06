@@ -29,3 +29,8 @@ CASE DE TESTE : Listar perfis de acesso
     Acessar site do SIGA "${URL}"
     Realizar login
     Verificar se aparece na página perfil de acesso "${GRADUACAO_BTN}"
+
+CASE DE TESTE: Exibir/Esconder Dashboard
+    [Documentation]    Clica no ícone do menu para exibir o sidebar
+    Acessar site do SIGA "${URL}"
+    
