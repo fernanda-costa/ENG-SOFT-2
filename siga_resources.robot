@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Resources dos testes da página do TADS
+Documentation    Resources dos testes da página do SIGA
 Library          SeleniumLibrary
 
 *** Variables ***

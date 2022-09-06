@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Esta suíte de testes verifica o site do SIGA
-Resource         tads_resources.robot
+Resource         siga_resources.robot
 Test Setup       Abrir o Navegador
 Test Teardown    Fechar o Navegador
 
