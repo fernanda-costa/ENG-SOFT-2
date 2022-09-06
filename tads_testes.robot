@@ -6,7 +6,6 @@ Test Setup       Abrir o Navegador
 
 *** Variables ***
 ${URL}    https://www.prppg.ufpr.br/siga/
-${GRADUACAO_BTN}    Graduação
 
 *** Test Cases ***
 
@@ -27,8 +26,15 @@ CASE DE TESTE : Listar perfis de acesso
     [Documentation]    Verifica se os perfis de acesso são exibidos
     [Tags]    perfil de acesso
     Acessar site do SIGA "${URL}"
-    Realizar login
-    Verificar se aparece na página perfil de acesso "${GRADUACAO_BTN}"
+    Realiza login
+    Verificar se aparece na página perfil de acesso
+
+CASE DE TESTE : Realiza logout
+    [Documentation]    Realiza logout
+    [Tags]    logout
+    Acessar site do SIGA "${URL}"
+    Realiza login
+    Realiza logout
 
 CASE DE TESTE: Exibir/Esconder Dashboard
     [Documentation]    Clica no ícone do menu para exibir o sidebar

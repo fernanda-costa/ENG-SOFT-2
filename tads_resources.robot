@@ -8,6 +8,9 @@ ${LOGO_SIGA}    //a[@class="navbar-brand"]
 ${USERNAME}    08364103946
 ${PASSWORD}    SenhaTemp1
 ${LOGIN_BTN}    //button[@type="submit"]  
+${GRADUACAO_BTN}    //button[@class="btn btn-box-tool no-fa-icon"]  
+${LOGOUT_BTN}    //a[text()='Sair']  
+${PORTAL_URL}    https://siga.ufpr.br/portal/  
 ${MENSAGEM_ERRO}    //div[contains(text(),'Usuário e/ou senha inválidos!')]
 
 *** Keywords ***
@@ -31,11 +34,12 @@ Realizar login
 Clicar no Botão Acessar
     Click Element    locator=${LOGIN_BTN}
 
-Checar Mensagem de Erro
-    Wait Until Element Is Visible    locator=${MENSAGEM_ERRO}                                  
+Verificar se aparece na página perfil de acesso
+    Element Should Be Visible  locator=${GRADUACAO_BTN}
 
-Exibir/Esconder Dashboard
+Verificar se aparece na página perfil de acesso
+    Element Should Be Visible  locator=${GRADUACAO_BTN}
 
-Verificar se aparece na página "${TEXTO}"
-    Wait Until Element Is Visible    locator=//p[contains(.,'${TEXTO} (atendimento por email e Teams durante a suspensão do calendário acadêmico):')]                                   
-
+Realiza logout
+    Click Element    locator=${LOGOUT_BTN}
+    Location Should Be  url=${PORTAL_URL}
