@@ -38,7 +38,12 @@ CASE DE TESTE : Realizar logout
     Realizar login
     Realizar logout
 
-CASE DE TESTE: Exibir/Esconder Dashboard
+CASE DE TESTE: Exibir Sidebar
     [Documentation]    Clica no ícone do menu para exibir o sidebar
+    [Tags]    sidebar
     Acessar site do SIGA "${URL}"
+    Realizar login
+    Ir para o perfil de acesso Graduação
+    Clicar no Icone do Menu Sidebar
     
+    Clicar no Icone do Menu Sidebar

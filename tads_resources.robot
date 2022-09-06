@@ -11,6 +11,8 @@ ${LOGIN_BTN}    //button[@type="submit"]
 ${LOGOUT_BTN}    //a[text()='Sair']  
 ${PORTAL_URL}    https://siga.ufpr.br/portal/  
 ${MENSAGEM_ERRO}    //div[contains(text(),'Usuário e/ou senha inválidos!')]
+${URL_GRADUACAO}    https://www.prppg.ufpr.br/siga/selecionanivelacesso?comboAcesso=IXSEPX40001016111G0XSEPX49XSEPX6XSEPXXSEPX0XSEPX1
+${ICONE_MENU}    //a[@class="sidebar-toggle"]
 
 *** Keywords ***
 Abrir o Navegador
@@ -39,3 +41,10 @@ Verificar se aparece na página perfil de acesso "${NOME_PERFIL}"
 Realizar logout
     Click Element    locator=${LOGOUT_BTN}
     Location Should Be    url=${PORTAL_URL}
+
+Ir para o perfil de acesso Graduação
+    Go To    ${URL_GRADUACAO}
+        
+Clicar no Icone do Menu Sidebar
+    Wait Until Element Is Visible    ${ICONE_MENU}
+    Click Element    ${ICONE_MENU}
