@@ -1,67 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220905 21:29:32.716" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220906 15:39:10.864" rpa="false" schemaversion="3">
 <suite id="s1" name="Tads Testes" source="C:\Users\fer-m\Documents\ENG SOFT 2\tads_testes.robot">
-<test id="s1-t1" name="CADE DE TESTE : Fazer login" line="24">
+<test id="s1-t1" name="CADE DE TESTE : Fazer login" line="22">
 <kw name="Abrir o Navegador" library="tads_resources" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220905 21:29:33.046" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220905 21:29:33.046" endtime="20220905 21:29:34.608"/>
+<msg timestamp="20220906 15:39:11.044" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220906 15:39:11.044" endtime="20220906 15:39:12.082"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220905 21:29:34.608" endtime="20220905 21:29:34.729"/>
+<status status="PASS" starttime="20220906 15:39:12.082" endtime="20220906 15:39:12.205"/>
 </kw>
-<status status="PASS" starttime="20220905 21:29:33.045" endtime="20220905 21:29:34.729"/>
+<status status="PASS" starttime="20220906 15:39:11.044" endtime="20220906 15:39:12.205"/>
 </kw>
-<kw name="Acessar site do TADS &quot;${URL}&quot;" library="tads_resources" sourcename="Acessar site do TADS &quot;${SITE_TADS}&quot;">
+<kw name="Acessar site do SIGA &quot;${URL}&quot;" library="tads_resources" sourcename="Acessar site do SIGA &quot;${SITE_SIGA}&quot;">
 <kw name="Go To" library="SeleniumLibrary">
-<arg>${SITE_TADS}</arg>
+<arg>${SITE_SIGA}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220905 21:29:34.732" level="INFO">Opening url 'https://siga.ufpr.br/portal/'</msg>
-<status status="PASS" starttime="20220905 21:29:34.732" endtime="20220905 21:29:42.579"/>
+<msg timestamp="20220906 15:39:12.206" level="INFO">Opening url 'https://www.prppg.ufpr.br/siga/'</msg>
+<status status="PASS" starttime="20220906 15:39:12.206" endtime="20220906 15:39:13.086"/>
 </kw>
-<status status="PASS" starttime="20220905 21:29:34.731" endtime="20220905 21:29:42.579"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${LOGO_SIGA}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220906 15:39:13.087" endtime="20220906 15:39:13.158"/>
 </kw>
-<kw name="Inserir no login" library="tads_resources">
+<status status="PASS" starttime="20220906 15:39:12.205" endtime="20220906 15:39:13.159"/>
+</kw>
+<kw name="Realiza login" library="tads_resources">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>name=login</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220905 21:29:42.580" level="INFO">Typing text '08364103946' into text field 'name=login'.</msg>
-<status status="PASS" starttime="20220905 21:29:42.580" endtime="20220905 21:29:42.717"/>
+<msg timestamp="20220906 15:39:13.161" level="INFO">Typing text '08364103946' into text field 'name=login'.</msg>
+<status status="PASS" starttime="20220906 15:39:13.160" endtime="20220906 15:39:13.229"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>name=password</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220905 21:29:42.717" level="INFO">Typing password into text field 'name=password'.</msg>
-<msg timestamp="20220905 21:29:42.768" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220905 21:29:42.831" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220905 21:29:42.717" endtime="20220905 21:29:42.831"/>
+<msg timestamp="20220906 15:39:13.230" level="INFO">Typing password into text field 'name=password'.</msg>
+<msg timestamp="20220906 15:39:13.258" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220906 15:39:13.290" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220906 15:39:13.230" endtime="20220906 15:39:13.290"/>
 </kw>
-<status status="PASS" starttime="20220905 21:29:42.580" endtime="20220905 21:29:42.831"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${LOGIN_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220906 15:39:13.290" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20220906 15:39:13.290" endtime="20220906 15:39:13.443"/>
+</kw>
+<status status="PASS" starttime="20220906 15:39:13.159" endtime="20220906 15:39:13.444"/>
+</kw>
+<kw name="Verificar se aparece na página perfil de acesso&quot;${GRADUACAO_BTN}&quot;">
+<msg timestamp="20220906 15:39:13.445" level="FAIL">No keyword with name 'Verificar se aparece na página perfil de acesso"${GRADUACAO_BTN}"' found. Did you mean:
+    tads_resources.Verificar Se Aparece Na Página Perfil De Acesso "${TEXTO}"</msg>
+<status status="FAIL" starttime="20220906 15:39:13.445" endtime="20220906 15:39:13.445"/>
 </kw>
 <doc>Fazer login</doc>
 <tag>estagio</tag>
-<status status="PASS" starttime="20220905 21:29:33.043" endtime="20220905 21:29:42.832"/>
+<status status="FAIL" starttime="20220906 15:39:11.043" endtime="20220906 15:39:13.446">No keyword with name 'Verificar se aparece na página perfil de acesso"${GRADUACAO_BTN}"' found. Did you mean:
+    tads_resources.Verificar Se Aparece Na Página Perfil De Acesso "${TEXTO}"</status>
 </test>
-<doc>Esta suíte de testes verifica o site do TADS</doc>
-<status status="PASS" starttime="20220905 21:29:32.718" endtime="20220905 21:29:42.833"/>
+<doc>Esta suíte de testes verifica o site do SIGA</doc>
+<status status="FAIL" starttime="20220906 15:39:10.866" endtime="20220906 15:39:13.447"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">estagio</stat>
+<stat pass="0" fail="1" skip="0">estagio</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Tads Testes">Tads Testes</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tads Testes">Tads Testes</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220905 21:29:33.039" level="ERROR">Error in file 'C:\Users\fer-m\Documents\ENG SOFT 2\tads_testes.robot' on line 4: Variable file 'config.py' does not exist.</msg>
+<msg timestamp="20220906 15:39:11.041" level="ERROR">Error in file 'C:\Users\fer-m\Documents\ENG SOFT 2\tads_testes.robot' on line 4: Variable file 'config.py' does not exist.</msg>
 </errors>
 </robot>
