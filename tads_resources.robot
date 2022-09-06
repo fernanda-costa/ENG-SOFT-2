@@ -4,12 +4,10 @@ Library          SeleniumLibrary
 
 *** Variables ***
 ${BROWSER}    chrome
-${LOGO_SIGA}    //*[@class="site-branding logo"]//img[@alt="SIGAUFPR"]                               
-${MENU_COE}    //a[@role="menuitem"][contains(.,'COE (Estágio)')]
-${LINK_ACESSAR}    //span[@class="login pl-2"][contains(.,'Acessar')]                                   
+${LOGO_SIGA}    //a[@class="navbar-brand"]                                   
 ${USERNAME}    08364103946
-${PASSWORD}    Fefa0890
-${LOGIN_BTN}    //input[@class="menu-item menu-item-type-post_type menu-item-object-page buttonSubmit"]  
+${PASSWORD}    SenhaTemp1
+${LOGIN_BTN}    //button[@type="submit"]  
 ${MENSAGEM_ERRO}    //span[contains(text(),'Usuário ou senha inválidos!')]
 
 *** Keywords ***
@@ -17,14 +15,14 @@ Abrir o Navegador
     Open Browser    browser=${BROWSER}
     Maximize Browser Window
 
-# Fechar o Navegador
-#     Close Browser
+Fechar o Navegador
+    Close Browser
 
 Acessar site do SIGA "${SITE_SIGA}"
     Go To    ${SITE_SIGA}
     Wait Until Element Is Visible    locator=${LOGO_SIGA}
 
-Realizar Login
+Realizar login
     Input Text    name=login    ${USERNAME}  
     Input Password    name=password    ${PASSWORD}  
     Wait Until Element Is Visible    locator=${LOGIN_BTN}
